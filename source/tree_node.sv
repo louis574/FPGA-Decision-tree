@@ -49,6 +49,7 @@ module  tree_node #(parameter int rows = 8,int width = 10, int struct_array [0:r
             end
             else begin
                 always @(*) begin
+                result = {output_width{1'b1}}; //to protect from latches (even in dead nodes that arent expressed but are still used)
                     for(x=0; x<splits[layer]; x = x+1) begin
                         if(struct_array[layer][4 + x*2] == inputs[struct_array[layer][2]:struct_array[layer][3]]) begin
                             result = outs[x];
