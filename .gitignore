@@ -1,6 +1,7 @@
 *
 !*.sv
 !*.v
+!*.cpp
 !*/
 !/.gitignore
 !/.gitattributes
